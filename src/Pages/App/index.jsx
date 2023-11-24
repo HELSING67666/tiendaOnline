@@ -1,5 +1,6 @@
 import './App.css'
 import { useRoutes, BrowserRouter } from 'react-router-dom'
+import { ShopingCardProvider } from '../../Context'
 import { Home } from '../Home'
 import {MyOrder} from '../MyOrder'
 import {MyOrders} from '../MyOrders'
@@ -25,12 +26,14 @@ function App() {
    
   return (
     <>
-     <BrowserRouter>
-     <Layout>
-        <AppRouter/>
-        </Layout>
-        <Navbar/>
-     </BrowserRouter>
+    <ShopingCardProvider>
+      <BrowserRouter>
+      <Layout>
+          <AppRouter/>
+          </Layout>
+          <Navbar/>
+      </BrowserRouter>
+     </ShopingCardProvider>
       
     </>
   )
