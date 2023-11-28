@@ -9,7 +9,7 @@ function ShopingCardProvider({children}) {
     const closeProductDetail = () => setIsProductDetailOpen(false)
 
     const [productToShow, setProductToShow] = React.useState({})
-    const [carProduct, setCarProduct] = React.useState([{}])
+    const [carProduct, setCarProduct] = React.useState([])
 
     const [isCheckoutSideMenu, setIsCheckoutSideMenu] = React.useState(false)
     const openCheckoutSideMenu = () => setIsCheckoutSideMenu(true)
