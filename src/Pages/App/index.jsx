@@ -8,18 +8,25 @@ import {MyAccount} from '../MyAccount'
 import {SignIn} from '../SignIn'
 import {NotFound} from '../NotFound'
 import { Navbar } from '../../Components/Navbar'
-import { Layout } from '../../Components/Layout'
 import { CheckoutSideMenu } from '../../Components/CheckoutSideMenu'
 
-const AppRouter = () => { 
+const AppRoutes = () => {
   let routes = useRoutes([
-    { path: '/', element: <Home/>},
-    {path: '/my-order', element: <MyOrder/>},
-    {path: '/my-orders',element: <MyOrders/>    },
-    {path: '/my-account',element: <MyAccount/>},
-    {path: '/sign-in',element: <SignIn/>    },
-    {path: '*',element: <NotFound/>    }
+    { path: '/', element: <Home /> },
+    { path: '/clothes', element: <Home /> },
+    { path: '/electronics', element: <Home /> },
+    { path: '/furnitures', element: <Home /> },
+    { path: '/toys', element: <Home /> },
+    { path: '/others', element: <Home /> },
+    { path: '/my-account', element: <MyAccount /> },
+    { path: '/my-order', element: <MyOrder /> },
+    { path: '/my-orders', element: <MyOrders /> },
+    { path: '/my-orders/last', element: <MyOrder /> },
+    { path: '/my-orders/:id', element: <MyOrder /> },
+    { path: '/sign-in', element: <SignIn /> },
+    { path: '/*', element: <NotFound /> },
   ])
+
   return routes
 }
 
@@ -29,12 +36,12 @@ function App() {
     <>
     <ShopingCardProvider>
       <BrowserRouter>
-      <Layout>
-          <AppRouter/>
-          </Layout>
-          <Navbar/>
+        <AppRoutes/>
+        <Navbar/>
+        <CheckoutSideMenu />
+        
       </BrowserRouter>
-      <CheckoutSideMenu/>
+      
      </ShopingCardProvider>
       
     </>

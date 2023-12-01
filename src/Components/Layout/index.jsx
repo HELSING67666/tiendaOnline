@@ -7,4 +7,4 @@ function Layout({ children}) {
   )
 }
 
-export { Layout}
+export { Layout }
